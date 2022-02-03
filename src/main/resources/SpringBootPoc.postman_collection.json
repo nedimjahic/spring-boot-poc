@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "bbf5ec9d-b9a8-4720-8fcc-cb408ee08480",
+		"name": "SpringBootPoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/auth/login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testUsername\",\r\n    \"password\": \"testPassword\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth/forgot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/forgot",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/dashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/dashboard",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/apikeys",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/admin/apikeys",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"apikeys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/ping",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/ping",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/log",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/log",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"log"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
