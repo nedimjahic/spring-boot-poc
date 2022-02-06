@@ -1,8 +1,8 @@
-package com.acme.poc.SpringPocApplication.controller.rest;
+package com.acme.poc.springpocapplication.controller.rest;
 
-import com.acme.poc.SpringPocApplication.model.User;
-import com.acme.poc.SpringPocApplication.util.JwtUtil;
-import com.acme.poc.SpringPocApplication.util.Url;
+import com.acme.poc.springpocapplication.model.User;
+import com.acme.poc.springpocapplication.util.JwtUtil;
+import com.acme.poc.springpocapplication.util.Url;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 

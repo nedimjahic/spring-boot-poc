@@ -1,10 +1,10 @@
-package com.acme.poc.SpringPocApplication.util;
+package com.acme.poc.springpocapplication.util;
 
-import com.acme.poc.SpringPocApplication.model.User;
+import com.acme.poc.springpocapplication.JwtProperties;
+import com.acme.poc.springpocapplication.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -19,8 +19,12 @@ public class JwtUtil
 
 	public static final String PASSWORD = "password";
 
-	@Value("${jwt.secret}")
-	private String secret;
+	private final JwtProperties jwtProperties;
+
+	public JwtUtil(JwtProperties jwtProperties)
+	{
+		this.jwtProperties = jwtProperties;
+	}
 
 	public String getUsernameFromToken(String token) {
 		return getClaimFromToken(token, Claims::getSubject);
@@ -39,7 +43,7 @@ public class JwtUtil
 	}
 
 	private Claims getAllClaimsFromToken(String token) {
-		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+		return Jwts.parser().setSigningKey(jwtProperties.getSecret()).parseClaimsJws(token).getBody();
 	}
 
 	//check if the token has expired
@@ -58,7 +62,7 @@ public class JwtUtil
 
 		return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
 			.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
-			.signWith(SignatureAlgorithm.HS512, secret).compact();
+			.signWith(SignatureAlgorithm.HS512, jwtProperties.getSecret()).compact();
 	}
 
 	public Boolean validateToken(String token, User user) {

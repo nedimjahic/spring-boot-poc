@@ -58,13 +58,37 @@
 		},
 		{
 			"name": "/admin/dashboard",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: pm.environment.get(\"url\") + '/auth/login',\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'username': 'testUsername','password': 'testPassword'})\r",
+							"    },\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'content-type': 'application/json',\r",
+							"        'Cookie': 'JSESSIONID=7DA9AC55E02A1ACD753A9E4E8136EA41'\r",
+							"    },\r",
+							"}, function (err, res) {\r",
+							"    pm.environment.set(\"jwt_token\", res.text());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"value": "{{jwt_token}}",
 							"type": "string"
 						}
 					]
@@ -86,13 +110,37 @@
 		},
 		{
 			"name": "/admin/users",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: pm.environment.get(\"url\") + '/auth/login',\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'username': 'testUsername','password': 'testPassword'})\r",
+							"    },\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'content-type': 'application/json',\r",
+							"        'Cookie': 'JSESSIONID=7DA9AC55E02A1ACD753A9E4E8136EA41'\r",
+							"    },\r",
+							"}, function (err, res) {\r",
+							"    pm.environment.set(\"jwt_token\", res.text());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"value": "{{jwt_token}}",
 							"type": "string"
 						}
 					]
@@ -114,13 +162,37 @@
 		},
 		{
 			"name": "/admin/apikeys",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: pm.environment.get(\"url\") + '/auth/login',\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'username': 'testUsername','password': 'testPassword'})\r",
+							"    },\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'content-type': 'application/json',\r",
+							"        'Cookie': 'JSESSIONID=7DA9AC55E02A1ACD753A9E4E8136EA41'\r",
+							"    },\r",
+							"}, function (err, res) {\r",
+							"    pm.environment.set(\"jwt_token\", res.text());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"value": "{{jwt_token}}",
 							"type": "string"
 						}
 					]
@@ -142,13 +214,37 @@
 		},
 		{
 			"name": "/api/ping",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: pm.environment.get(\"url\") + '/auth/login',\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'username': 'testUsername','password': 'testPassword'})\r",
+							"    },\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'content-type': 'application/json',\r",
+							"        'Cookie': 'JSESSIONID=7DA9AC55E02A1ACD753A9E4E8136EA41'\r",
+							"    },\r",
+							"}, function (err, res) {\r",
+							"    pm.environment.set(\"jwt_token\", res.text());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"value": "{{jwt_token}}",
 							"type": "string"
 						}
 					]
@@ -170,13 +266,37 @@
 		},
 		{
 			"name": "/api/log",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest({\r",
+							"    url: pm.environment.get(\"url\") + '/auth/login',\r",
+							"    body: {\r",
+							"        mode: 'raw',\r",
+							"        raw: JSON.stringify({'username': 'testUsername','password': 'testPassword'})\r",
+							"    },\r",
+							"    method: 'POST',\r",
+							"    header: {\r",
+							"        'content-type': 'application/json',\r",
+							"        'Cookie': 'JSESSIONID=7DA9AC55E02A1ACD753A9E4E8136EA41'\r",
+							"    },\r",
+							"}, function (err, res) {\r",
+							"    pm.environment.set(\"jwt_token\", res.text());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlcm5hbWUiLCJwYXNzd29yZCI6InRlc3RQYXNzd29yZCIsImV4cCI6MTY0NDExOTI5NCwiaWF0IjoxNjQ0MTAxMjk0LCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSJ9.vfuAl9xKgu3yrCl0y0XmOyTdAJ5HFRB3uE1VJuRlq2JewdunIZ7vd8pGUytqqyS9SilNZwIYLpyHdkkfiddfPw",
+							"value": "{{jwt_token}}",
 							"type": "string"
 						}
 					]
@@ -191,6 +311,26 @@
 					"path": [
 						"api",
 						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/*",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/*",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"*"
 					]
 				}
 			},

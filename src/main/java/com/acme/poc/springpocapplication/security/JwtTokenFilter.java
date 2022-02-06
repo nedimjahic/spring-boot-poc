@@ -1,7 +1,7 @@
-package com.acme.poc.SpringPocApplication.security;
+package com.acme.poc.springpocapplication.security;
 
-import com.acme.poc.SpringPocApplication.model.User;
-import com.acme.poc.SpringPocApplication.util.JwtUtil;
+import com.acme.poc.springpocapplication.model.User;
+import com.acme.poc.springpocapplication.util.JwtUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;

@@ -1,16 +1,16 @@
-package com.acme.poc.SpringPocApplication.controller;
+package com.acme.poc.springpocapplication.controller;
 
-import com.acme.poc.SpringPocApplication.util.Url;
+import com.acme.poc.springpocapplication.util.Url;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(Url.UI + Url.FORGOT)
-public class ForgotController {
+@RequestMapping(Url.UI + Url.LOGIN)
+public class LoginController {
 
 	@GetMapping
 	public String get() {
-		return Url.FORGOT;
+		return Url.LOGIN;
 	}
 }

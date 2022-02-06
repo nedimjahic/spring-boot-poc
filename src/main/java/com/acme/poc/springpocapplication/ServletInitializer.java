@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication;
+package com.acme.poc.springpocapplication;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

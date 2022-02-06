@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication;
+package com.acme.poc.springpocapplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

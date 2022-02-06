@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication.controller;
+package com.acme.poc.springpocapplication.controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -14,12 +14,12 @@ public class CustomErrorController implements ErrorController {
 
 		switch(statusCode) {
 			case 403:
-				return "403";
+				return "error/403";
 			case 500:
-				return "500";
+				return "error/500";
 			case 404:
 			default:
-				return "404";
+				return "error/404";
 		}
 	}
 }

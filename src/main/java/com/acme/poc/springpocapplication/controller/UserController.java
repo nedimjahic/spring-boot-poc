@@ -1,6 +1,6 @@
-package com.acme.poc.SpringPocApplication.controller;
+package com.acme.poc.springpocapplication.controller;
 
-import com.acme.poc.SpringPocApplication.util.Url;
+import com.acme.poc.springpocapplication.util.Url;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

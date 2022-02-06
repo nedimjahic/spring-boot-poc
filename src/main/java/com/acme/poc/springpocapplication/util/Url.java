@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication.util;
+package com.acme.poc.springpocapplication.util;
 
 public class Url
 {
@@ -30,7 +30,7 @@ public class Url
 
 	public static final String LOG = "/log";
 
-	public static final String ACCOUNT = "account";
+	public static final String ACCOUNT = "/account";
 
-	public static final String PROFILE = "profile";
+	public static final String PROFILE = "/profile";
 }

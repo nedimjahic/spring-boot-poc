@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication.model;
+package com.acme.poc.springpocapplication.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

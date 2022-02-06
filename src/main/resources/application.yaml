@@ -1,0 +1,6 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/ui/
+
+jwt:
+  secret: springbootpoc

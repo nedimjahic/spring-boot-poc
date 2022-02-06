@@ -1,4 +1,4 @@
-package com.acme.poc.SpringPocApplication.security;
+package com.acme.poc.springpocapplication.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         http.csrf().ignoringAntMatchers("/auth/**", "/admin/**", "/api/**")
             .and()
             .authorizeRequests()
-            .antMatchers("ui/login", "/ui/forgot", "ui/static/**", "/auth/**", "/*", "/v3/api-docs", "/swagger-ui.html").permitAll()
+            .antMatchers("ui/login", "/ui/forgot", "ui/static/**", "/auth/**", "/*", "/v3/api-docs", "/swagger-ui/**").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin().loginPage("/ui/login").permitAll()
