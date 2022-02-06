@@ -22,8 +22,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         http.csrf().ignoringAntMatchers("/auth/**", "/admin/**", "/api/**")
             .and()
             .authorizeRequests()
-            .antMatchers("/auth/**", "/**").permitAll()
-            .anyRequest().authenticated();
+            .antMatchers("ui/login", "/ui/forgot", "ui/static/**", "/auth/**", "/*").permitAll()
+            .anyRequest().authenticated()
+            .and()
+            .formLogin().loginPage("/ui/login").permitAll()
+            .and()
+            .logout().logoutUrl("/ui/forgot").permitAll();
 
         // Add JWT token filter
         http.addFilterBefore(jwtTokenFilter, BasicAuthenticationFilter.class);

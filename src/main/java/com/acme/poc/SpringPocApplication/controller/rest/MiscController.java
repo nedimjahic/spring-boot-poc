@@ -1,12 +1,14 @@
 package com.acme.poc.SpringPocApplication.controller.rest;
 
+import com.acme.poc.SpringPocApplication.util.Url;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/**")
+@RequestMapping(Url.MISC)
 public class MiscController
 {
+
 	@GetMapping
 	@PostMapping
 	@PutMapping
